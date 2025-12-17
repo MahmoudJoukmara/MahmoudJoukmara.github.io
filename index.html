@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web & AI Solutions</title>
+  <title>Apricot Solution - Web & AI Solutions</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -16,18 +16,27 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
       line-height: 1.6;
+      transition: background .3s, color .3s;
     }
+
+    body.light {
+      background: #f5f5f5;
+      color: #111;
+    }
+
+    body.dark {
+      background: #111;
+      color: #f5f5f5;
+    }
+
+    a { text-decoration: none; }
 
     section {
       padding: 80px 10%;
     }
 
-    h1, h2 {
-      color: #fff;
-    }
+    h1, h2 { margin-bottom: 20px; }
 
     /* ---------- HERO ---------- */
     .hero {
@@ -45,44 +54,40 @@
 
     .hero-text h1 {
       font-size: 3rem;
-      margin-bottom: 20px;
+      color: #ff6f61;
     }
 
     .hero-text span {
-      color: #38bdf8;
+      color: #fbc02d;
     }
 
     .hero-text p {
       margin-bottom: 30px;
-      color: #cbd5f5;
+      color: inherit;
     }
 
     .btn {
       display: inline-block;
       padding: 14px 30px;
-      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      background: linear-gradient(135deg, #ff6f61, #fbc02d);
       color: #fff;
-      text-decoration: none;
       border-radius: 50px;
       transition: transform .3s, box-shadow .3s;
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(56,189,248,.4);
+      box-shadow: 0 10px 30px rgba(255,111,97,.4);
     }
 
     .hero-graphic {
       font-size: 220px;
-      color: rgba(56,189,248,.15);
+      color: rgba(255,111,97,.15);
       animation: float 4s ease-in-out infinite;
     }
 
     /* ---------- SERVICES ---------- */
-    .services h2 {
-      text-align: center;
-      margin-bottom: 60px;
-    }
+    .services h2 { text-align: center; margin-bottom: 60px; }
 
     .service-grid {
       display: grid;
@@ -91,7 +96,7 @@
     }
 
     .service-card {
-      background: #020617;
+      background: rgba(255,111,97,0.1);
       padding: 35px;
       border-radius: 20px;
       text-align: center;
@@ -107,79 +112,80 @@
 
     .service-card i {
       font-size: 40px;
-      color: #38bdf8;
+      color: #ff6f61;
       margin-bottom: 20px;
     }
 
     .service-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+      box-shadow: 0 20px 40px rgba(255,111,97,.4);
     }
 
     /* ---------- PROJECTS ---------- */
     .projects {
-      background: #020617;
+      background: rgba(255,111,97,0.05);
     }
 
-    .projects h2 {
-      text-align: center;
-      margin-bottom: 50px;
-    }
+    .projects h2 { text-align: center; margin-bottom: 50px; }
 
     .project {
       max-width: 900px;
       margin: 0 auto 40px;
-      background: #0f172a;
+      background: rgba(255,111,97,0.1);
       padding: 30px;
       border-radius: 16px;
       animation: fadeInUp 1s ease both;
     }
 
+    /* ---------- EXPERIENCE ---------- */
+    .experience h2 { text-align: center; margin-bottom: 50px; }
+
     /* ---------- FOOTER ---------- */
     footer {
       text-align: center;
       padding: 40px;
-      background: #020617;
-      color: #94a3b8;
+      background: rgba(255,111,97,0.1);
+      color: inherit;
     }
+
+    /* ---------- GAME ---------- */
+    .game {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .game button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 12px;
+      border: none;
+      background: #ff6f61;
+      color: #fff;
+      cursor: pointer;
+      transition: transform .2s;
+    }
+
+    .game button:hover { transform: scale(1.1); }
 
     /* ---------- ANIMATIONS ---------- */
-    @keyframes fadeInLeft {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
+    @keyframes fadeInLeft { from { opacity:0; transform:translateX(-50px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-20px); } }
 
     /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-graphic {
-        font-size: 160px;
-      }
-    }
+    @media (max-width:900px){ .hero{ flex-direction:column; text-align:center; } .hero-graphic{ font-size:160px; } }
   </style>
 </head>
-<body>
+<body class="dark">
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
-      <h1>Web & <span>AI Solutions</span></h1>
-      <p>We build intelligent, scalable and secure digital solutions that help businesses grow using modern web technologies and artificial intelligence.</p>
+      <h1>Apricot <span>Solution</span></h1>
+      <p>We deliver intelligent, scalable web and AI solutions for businesses and IT infrastructures.</p>
+      <p>📞 Phone: +123 456 7890</p>
       <a href="#services" class="btn">Explore Services</a>
+      <button onclick="toggleTheme()" class="btn" style="margin-left:10px;">Toggle Dark/Light</button>
     </div>
     <div class="hero-graphic">
       <i class="fas fa-brain"></i>
@@ -190,54 +196,56 @@
   <section id="services" class="services">
     <h2>Our Services</h2>
     <div class="service-grid">
-      <div class="service-card">
-        <i class="fas fa-code"></i>
-        <h3>Web Development</h3>
-        <p>Custom websites, dashboards, APIs and high‑performance platforms.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-robot"></i>
-        <h3>AI Solutions</h3>
-        <p>Chatbots, automation, AI analytics and smart assistants.</p>
-      </div>
-      <div class="service-card">
-        <i class="fas fa-cloud"></i>
-        <h3>System Integration</h3>
-        <p>Connecting systems, cloud deployment and scalable architecture.</p>
-      </div>
+      <div class="service-card"><i class="fas fa-code"></i><h3>Web Development</h3><p>Custom websites, dashboards, APIs and high-performance platforms.</p></div>
+      <div class="service-card"><i class="fab fa-react"></i><h3>React Applications</h3><p>Modern React, SPA, dashboards, POS systems and enterprise interfaces.</p></div>
+      <div class="service-card"><i class="fas fa-robot"></i><h3>AI Solutions</h3><p>Chatbots, automation, AI analytics and smart assistants.</p></div>
+      <div class="service-card"><i class="fas fa-server"></i><h3>Hosting & Servers</h3><p>Domain setup, VPS, shared hosting, server security and optimization.</p></div>
+      <div class="service-card"><i class="fas fa-network-wired"></i><h3>IT Solutions</h3><p>Computer science solutions, system design, automation and IT consulting.</p></div>
+      <div class="service-card"><i class="fas fa-cloud"></i><h3>System Integration</h3><p>Connecting systems, cloud deployment and scalable architecture.</p></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience">
+    <h2>Experience</h2>
+    <div class="service-grid">
+      <div class="service-card show"><i class="fas fa-briefcase"></i><h3>7+ Years Experience</h3><p>Professional experience delivering scalable web and AI solutions globally.</p></div>
+      <div class="service-card show"><i class="fas fa-globe"></i><h3>International Projects</h3><p>Projects delivered across multiple countries and industries.</p></div>
+      <div class="service-card show"><i class="fas fa-shield-alt"></i><h3>Secure Systems</h3><p>Security-focused development and infrastructure best practices.</p></div>
     </div>
   </section>
 
   <!-- PROJECTS -->
   <section class="projects">
     <h2>Selected Projects</h2>
-    <div class="project">
-      <h3>Smart Business Dashboard</h3>
-      <p>AI-powered analytics dashboard for real-time insights and reporting.</p>
-    </div>
-    <div class="project">
-      <h3>AI Customer Support Assistant</h3>
-      <p>24/7 chatbot integrated with CRM systems.</p>
-    </div>
+    <div class="project"><h3>Smart Business Dashboard</h3><p>AI-powered analytics dashboard for real-time insights and reporting.</p></div>
+    <div class="project"><h3>AI Customer Support Assistant</h3><p>24/7 chatbot integrated with CRM systems.</p></div>
+  </section>
+
+  <!-- GAME -->
+  <section class="game">
+    <h2>Spin the Wheel & Win an Offer!</h2>
+    <button onclick="playGame()">Spin Now</button>
+    <p id="gameResult"></p>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    © 2026 Web & AI Solutions. All rights reserved.
-  </footer>
+  <footer>© 2026 Apricot Solution. All rights reserved.</footer>
 
   <script>
     const cards = document.querySelectorAll('.service-card');
-
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-        }
-      });
+      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); } });
     }, { threshold: 0.2 });
-
     cards.forEach(card => observer.observe(card));
+
+    function toggleTheme(){ document.body.classList.toggle('dark'); document.body.classList.toggle('light'); }
+
+    function playGame(){
+      const offers = ['10% Discount','Free Consultation','Bonus Service','No Prize, Try Again!'];
+      const result = offers[Math.floor(Math.random()*offers.length)];
+      document.getElementById('gameResult').innerText = 'You won: ' + result;
+    }
   </script>
 
 </body>
