@@ -5,185 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Apricot Solution - Web & AI Solutions</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      transition: background .3s, color .3s;
-    }
-
-    body.light {
-      background: #f5f5f5;
-      color: #111;
-    }
-
-    body.dark {
-      background: #111;
-      color: #f5f5f5;
-    }
-
+    body { font-family: 'Poppins', sans-serif; line-height: 1.6; transition: background .3s, color .3s; }
+    body.light { background: #f5f5f5; color: #111; }
+    body.dark { background: #111; color: #f5f5f5; }
     a { text-decoration: none; }
-
-    section {
-      padding: 80px 10%;
-    }
-
+    section { padding: 80px 10%; }
     h1, h2 { margin-bottom: 20px; }
 
-    /* ---------- HERO ---------- */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 50px;
-    }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; gap: 50px; }
+    .hero-text { max-width: 550px; animation: fadeInLeft 1.2s ease forwards; }
+    .hero-text h1 { font-size: 3rem; color: #ff6f61; display: flex; align-items: center; gap: 10px; }
+    .hero-text h1 i { font-size: 2.5rem; color: #ffb347; }
+    .hero-text span { color: #fbc02d; }
+    .hero-text p { margin-bottom: 15px; color: inherit; }
+    .btn { display: inline-block; padding: 14px 30px; background: linear-gradient(135deg, #ff6f61, #fbc02d); color: #fff; border-radius: 50px; transition: transform .3s, box-shadow .3s; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,111,97,.4); }
+    .hero-graphic { font-size: 220px; color: rgba(255,111,97,.15); animation: float 4s ease-in-out infinite; }
 
-    .hero-text {
-      max-width: 550px;
-      animation: fadeInLeft 1.2s ease forwards;
-    }
+    .services h2, .clients h2, .projects h2 { text-align: center; margin-bottom: 60px; }
+    .service-grid, .clients-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; }
+    .service-card, .client-card, .project-card { background: rgba(255,111,97,0.1); padding: 35px; border-radius: 20px; text-align: center; transition: transform .4s, box-shadow .4s; opacity: 0; transform: translateY(40px); }
+    .service-card.show, .client-card.show, .project-card.show { opacity: 1; transform: translateY(0); }
+    .service-card i, .client-card i, .project-card i { font-size: 40px; color: #ff6f61; margin-bottom: 20px; }
+    .service-card:hover, .client-card:hover, .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(255,111,97,.4); }
 
-    .hero-text h1 {
-      font-size: 3rem;
-      color: #ff6f61;
-    }
+    .projects { background: rgba(255,111,97,0.05); }
 
-    .hero-text span {
-      color: #fbc02d;
-    }
-
-    .hero-text p {
-      margin-bottom: 30px;
-      color: inherit;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 30px;
-      background: linear-gradient(135deg, #ff6f61, #fbc02d);
-      color: #fff;
-      border-radius: 50px;
-      transition: transform .3s, box-shadow .3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(255,111,97,.4);
-    }
-
-    .hero-graphic {
-      font-size: 220px;
-      color: rgba(255,111,97,.15);
-      animation: float 4s ease-in-out infinite;
-    }
-
-    /* ---------- SERVICES ---------- */
-    .services h2 { text-align: center; margin-bottom: 60px; }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
-    }
-
-    .service-card {
-      background: rgba(255,111,97,0.1);
-      padding: 35px;
-      border-radius: 20px;
-      text-align: center;
-      transition: transform .4s, box-shadow .4s;
-      opacity: 0;
-      transform: translateY(40px);
-    }
-
-    .service-card.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .service-card i {
-      font-size: 40px;
-      color: #ff6f61;
-      margin-bottom: 20px;
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(255,111,97,.4);
-    }
-
-    /* ---------- PROJECTS ---------- */
-    .projects {
-      background: rgba(255,111,97,0.05);
-    }
-
-    .projects h2 { text-align: center; margin-bottom: 50px; }
-
-    .project {
-      max-width: 900px;
-      margin: 0 auto 40px;
-      background: rgba(255,111,97,0.1);
-      padding: 30px;
-      border-radius: 16px;
-      animation: fadeInUp 1s ease both;
-    }
-
-    /* ---------- EXPERIENCE ---------- */
     .experience h2 { text-align: center; margin-bottom: 50px; }
 
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 40px;
-      background: rgba(255,111,97,0.1);
-      color: inherit;
-    }
+    footer { text-align: center; padding: 40px; background: rgba(255,111,97,0.1); color: inherit; }
 
-    /* ---------- GAME ---------- */
-    .game {
-      text-align: center;
-      margin: 60px 0;
-    }
-
-    .game button {
-      padding: 12px 25px;
-      font-size: 1rem;
-      border-radius: 12px;
-      border: none;
-      background: #ff6f61;
-      color: #fff;
-      cursor: pointer;
-      transition: transform .2s;
-    }
-
+    .game { text-align: center; margin: 60px 0; }
+    .game button { padding: 12px 25px; font-size: 1rem; border-radius: 12px; border: none; background: #ff6f61; color: #fff; cursor: pointer; transition: transform .2s; }
     .game button:hover { transform: scale(1.1); }
 
-    /* ---------- ANIMATIONS ---------- */
     @keyframes fadeInLeft { from { opacity:0; transform:translateX(-50px); } to { opacity:1; transform:translateX(0); } }
     @keyframes fadeInUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
     @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-20px); } }
 
-    /* ---------- RESPONSIVE ---------- */
     @media (max-width:900px){ .hero{ flex-direction:column; text-align:center; } .hero-graphic{ font-size:160px; } }
   </style>
 </head>
 <body class="dark">
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
-      <h1>Apricot <span>Solution</span></h1>
+      <h1><i class="fas fa-apple-alt"></i> Apricot <span>Solution</span></h1>
       <p>We deliver intelligent, scalable web and AI solutions for businesses and IT infrastructures.</p>
-      <p>📞 Phone: +123 456 7890</p>
+      <p>📞 Phone: 70924853</p>
+      <p>✉️ Email: info@apricotsolution.com</p>
       <a href="#services" class="btn">Explore Services</a>
       <button onclick="toggleTheme()" class="btn" style="margin-left:10px;">Toggle Dark/Light</button>
     </div>
@@ -192,7 +67,6 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
   <section id="services" class="services">
     <h2>Our Services</h2>
     <div class="service-grid">
@@ -205,7 +79,6 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section class="experience">
     <h2>Experience</h2>
     <div class="service-grid">
@@ -215,37 +88,45 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section class="projects">
-    <h2>Selected Projects</h2>
-    <div class="project"><h3>Smart Business Dashboard</h3><p>AI-powered analytics dashboard for real-time insights and reporting.</p></div>
-    <div class="project"><h3>AI Customer Support Assistant</h3><p>24/7 chatbot integrated with CRM systems.</p></div>
+    <h2>Sample Projects & Solutions</h2>
+    <div class="projects-grid">
+      <div class="project-card show"><i class="fas fa-hotel"></i><h3>Hotel Booking System</h3><p>Complete hotel reservation and management platform.</p></div>
+      <div class="project-card show"><i class="fas fa-newspaper"></i><h3>News Portal</h3><p>Dynamic news website with AI-powered content recommendations.</p></div>
+      <div class="project-card show"><i class="fas fa-shopping-cart"></i><h3>E-Commerce Platform</h3><p>Full-featured online store with payment integration.</p></div>
+      <div class="project-card show"><i class="fas fa-chart-line"></i><h3>ERM System</h3><p>Enterprise resource management software for business optimization.</p></div>
+      <div class="project-card show"><i class="fas fa-cogs"></i><h3>CMS Solution</h3><p>Custom content management system for websites and apps.</p></div>
+    </div>
   </section>
 
-  <!-- GAME -->
+  <section class="clients">
+    <h2>Our Clients</h2>
+    <div class="clients-grid">
+      <div class="client-card show"><i class="fas fa-flag"></i><h3>France</h3></div>
+      <div class="client-card show"><i class="fas fa-flag"></i><h3>Canada</h3></div>
+      <div class="client-card show"><i class="fas fa-flag"></i><h3>Lebanon</h3></div>
+      <div class="client-card show"><i class="fas fa-flag"></i><h3>Arabia</h3></div>
+      <div class="client-card show"><i class="fas fa-flag"></i><h3>Saudi</h3></div>
+      <div class="client-card show"><i class="fas fa-flag"></i><h3>Iraq</h3></div>
+      <div class="client-card show"><i class="fas fa-flag"></i><h3>Germany</h3></div>
+    </div>
+  </section>
+
   <section class="game">
     <h2>Spin the Wheel & Win an Offer!</h2>
     <button onclick="playGame()">Spin Now</button>
     <p id="gameResult"></p>
   </section>
 
-  <!-- FOOTER -->
-  <footer>© 2026 Apricot Solution. All rights reserved.</footer>
+  <footer>© 2026 Apricot Solution | 📞 70924853 | ✉️ info@apricotsolution.com</footer>
 
   <script>
-    const cards = document.querySelectorAll('.service-card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); } });
-    }, { threshold: 0.2 });
+    const cards = document.querySelectorAll('.service-card, .client-card, .project-card');
+    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); } }); }, { threshold: 0.2 });
     cards.forEach(card => observer.observe(card));
 
     function toggleTheme(){ document.body.classList.toggle('dark'); document.body.classList.toggle('light'); }
-
-    function playGame(){
-      const offers = ['10% Discount','Free Consultation','Bonus Service','No Prize, Try Again!'];
-      const result = offers[Math.floor(Math.random()*offers.length)];
-      document.getElementById('gameResult').innerText = 'You won: ' + result;
-    }
+    function playGame(){ const offers=['10% Discount','Free Consultation','Bonus Service','No Prize, Try Again!']; const result=offers[Math.floor(Math.random()*offers.length)]; document.getElementById('gameResult').innerText='You won: '+result; }
   </script>
 
 </body>
