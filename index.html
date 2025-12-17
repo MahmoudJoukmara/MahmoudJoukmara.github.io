@@ -1,1 +1,244 @@
-hiiiiiii
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web & AI Solutions</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    h1, h2 {
+      color: #fff;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .hero-text {
+      max-width: 550px;
+      animation: fadeInLeft 1.2s ease forwards;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-text span {
+      color: #38bdf8;
+    }
+
+    .hero-text p {
+      margin-bottom: 30px;
+      color: #cbd5f5;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(56,189,248,.4);
+    }
+
+    .hero-graphic {
+      font-size: 220px;
+      color: rgba(56,189,248,.15);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    /* ---------- SERVICES ---------- */
+    .services h2 {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #020617;
+      padding: 35px;
+      border-radius: 20px;
+      text-align: center;
+      transition: transform .4s, box-shadow .4s;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .service-card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-card i {
+      font-size: 40px;
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    }
+
+    /* ---------- PROJECTS ---------- */
+    .projects {
+      background: #020617;
+    }
+
+    .projects h2 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .project {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      background: #0f172a;
+      padding: 30px;
+      border-radius: 16px;
+      animation: fadeInUp 1s ease both;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      text-align: center;
+      padding: 40px;
+      background: #020617;
+      color: #94a3b8;
+    }
+
+    /* ---------- ANIMATIONS ---------- */
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-graphic {
+        font-size: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Web & <span>AI Solutions</span></h1>
+      <p>We build intelligent, scalable and secure digital solutions that help businesses grow using modern web technologies and artificial intelligence.</p>
+      <a href="#services" class="btn">Explore Services</a>
+    </div>
+    <div class="hero-graphic">
+      <i class="fas fa-brain"></i>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-card">
+        <i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>Custom websites, dashboards, APIs and high‑performance platforms.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-robot"></i>
+        <h3>AI Solutions</h3>
+        <p>Chatbots, automation, AI analytics and smart assistants.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-cloud"></i>
+        <h3>System Integration</h3>
+        <p>Connecting systems, cloud deployment and scalable architecture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects">
+    <h2>Selected Projects</h2>
+    <div class="project">
+      <h3>Smart Business Dashboard</h3>
+      <p>AI-powered analytics dashboard for real-time insights and reporting.</p>
+    </div>
+    <div class="project">
+      <h3>AI Customer Support Assistant</h3>
+      <p>24/7 chatbot integrated with CRM systems.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Web & AI Solutions. All rights reserved.
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.service-card');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
